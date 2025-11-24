@@ -1,1 +1,22 @@
-<p>canciones works!</p>
+<p>AQUI ESTA MOSTRANDO EL COMPONENETE PERO NO SE HA LOGRADO QUE SE CONECTE</p>
+
+<div class="cover"
+      style="background-image: url('{{album?.image}}'); background-size: cover; background-position: center; text-align: right;">
+      <h2>{{album?.name}}</h2>
+      <div class="track-total">{{album?.canciones?.length}} Tracks</div>
+</div>
+<div class="container" style="text-align: right;">
+    <div *ngFor="let cancion of getcanciones()" class="cancion-card">
+      <div class="cancion-info">
+        <h3>{{cancion?.name}}</h3>
+        <p>Duration: {{cancion?.minutes}}:{{cancion?.seconds}}</p>
+        <label class="heart-toggle">
+          <input type="checkbox" name="liked">
+          <span class="heart"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+<!-- aqui hay errores de que no esta a la derecha pero bueno, me quede corto de tiempo en general no alcance a hacer el flujo de informacion pero en teoria el resto esta bien, no se como probarlooo aaaaaaa AAAAAAAAAA!!!! -->
+ 
+
