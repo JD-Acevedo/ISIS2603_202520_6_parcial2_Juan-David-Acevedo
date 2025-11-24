@@ -1,1 +1,9 @@
-<p>artistas works!</p>
+<div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
+  <button *ngFor="let artista of artistas"
+          type="button"
+          (click)="seleccionarArtista(artista)"
+          style="display:flex; align-items:center; gap:8px; padding:6px 10px; font-size:14px; border-radius:6px; border:1px solid #ccc; background:#fff; cursor:pointer;">
+    <img src="{{artista.image}}" alt="{{artista.name}}" style="width:32px; height:32px; object-fit:cover; border-radius:4px;">
+    <span>{{artista.name}}</span>
+  </button>
+</div>

@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend_examen2';
+
+
+  onArtistaSeleccionado(artista: any): void {
+    console.log('Artista seleccionado:', artista);
+  }
+
+
 }

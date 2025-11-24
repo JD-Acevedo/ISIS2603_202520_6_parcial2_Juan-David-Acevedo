@@ -1,1 +1,22 @@
 <p>albumes works!</p>
+<div class="container">
+    <div>
+      <img src="{{artista?.image}}" alt="{{artista?.name}}">
+      <h2>{{artista?.name}}</h2>
+    </div>
+    <div *ngFor="let album of albumes" class="album-card">
+      <img src={{album.image}} alt="{{artista?.name}} - {{album.name}}">
+      <div class="album-info">
+        <h3>{{album.name}}
+          <label class="heart-toggle">
+            <input type="checkbox" name="liked">
+            <span class="heart"></span>
+          </label>
+        </h3>
+        <p>{{album.year}}</p>
+        <span>Tracks: {{album.canciones}}</span>
+        <button (click)="openTracks(album)">Open tracks</button>
+      </div>
+    </div>
+
+  </div>

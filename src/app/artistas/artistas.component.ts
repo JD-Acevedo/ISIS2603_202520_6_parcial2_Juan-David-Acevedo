@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Artista } from '../modelo/artista';
 import { ArtistaService } from './artista.service';
 
@@ -9,6 +9,8 @@ import { ArtistaService } from './artista.service';
 })
 export class ArtistasComponent implements OnInit {
   artistas:Artista[] = [];
+  @Output() selecionnarArtista = new EventEmitter<Artista>();
+
   constructor(private artistaService: ArtistaService) {
     this.artistaService.getArtistas().subscribe(data => {
       this.artistas = data;
@@ -19,5 +21,9 @@ export class ArtistasComponent implements OnInit {
     this.artistaService.getArtistas().subscribe(data => {
       this.artistas = data;
     });
+  }
+
+  seleccionarArtista(artista: Artista): void {
+    this.selecionnarArtista.emit(artista);
   }
 }
